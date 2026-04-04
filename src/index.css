@@ -1,1 +1,133 @@
-@import "tailwindcss";
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color: #f5f7ff;
+  background: #0a0c1a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1a214e 0%, #090c1d 45%, #05060f 100%);
+}
+
+.game-shell {
+  width: min(1120px, 95%);
+  margin: 2rem auto;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.panel {
+  border: 1px solid rgba(159, 173, 255, 0.24);
+  border-radius: 14px;
+  padding: 1rem;
+  background: rgba(15, 18, 38, 0.85);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.26);
+}
+
+.subtitle { color: #aeb8ff; margin-top: 0; }
+.alias-row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+input, button {
+  border-radius: 10px;
+  border: 1px solid rgba(173, 184, 255, 0.5);
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff;
+  padding: 0.55rem 0.8rem;
+}
+
+button { cursor: pointer; }
+button:hover { border-color: #fff; }
+
+.stats-grid {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.stats-grid li { background: rgba(255, 255, 255, 0.05); border-radius: 10px; padding: 0.6rem; }
+.stats-grid span { display: block; color: #aeb8ff; font-size: 0.8rem; }
+
+.objective-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.objective-list li {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  padding: 0.35rem 0.5rem;
+}
+
+.objective-list li.done {
+  color: #8cf7be;
+}
+
+.toggles { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+.district-picker { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.8rem; }
+.district-picker .active { background: #6373ff; }
+
+.district-card { margin-bottom: 0.8rem; }
+
+.missions-title { margin: 0.4rem 0 0.6rem; }
+
+.missions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
+.mission-card {
+  border: 1px solid rgba(133, 149, 255, 0.35);
+  border-radius: 10px;
+  padding: 0.7rem;
+  background: rgba(9, 12, 30, 0.9);
+}
+
+.mission-card h4 { margin: 0 0 0.5rem; }
+.mission-card p { margin: 0.1rem 0 0.3rem; color: #d0d8ff; font-size: 0.9rem; }
+.mission-card button { margin-top: 0.4rem; }
+
+.scene-list { display: grid; gap: 0.6rem; margin-bottom: 0.8rem; }
+.scene-card { border-radius: 10px; border: 1px solid rgba(137, 247, 255, 0.25); background: rgba(6, 20, 28, 0.75); padding: 0.6rem 0.7rem; }
+.scene-card h4 { margin: 0 0 0.35rem; }
+.scene-card p { margin: 0; color: #bef6ff; font-size: 0.9rem; }
+
+.actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.9rem; }
+.inventory ul { padding-left: 1rem; }
+.log { grid-column: 1 / -1; }
+
+.card-grid { display: grid; gap: 0.6rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.select-card { border-radius: 10px; border: 1px solid rgba(173, 184, 255, 0.32); padding: 0.7rem; background: rgba(11, 14, 31, 0.88); }
+.select-card.active { border-color: #8cf7be; box-shadow: 0 0 0 1px rgba(140, 247, 190, 0.3) inset; }
+.select-card h4 { margin: 0 0 0.35rem; }
+.select-card p, .select-card small { display: block; margin: 0 0 0.35rem; color: #cbd4ff; }
+
+.controls ul { margin: 0; padding-left: 1rem; display: grid; gap: 0.4rem; }
+
+.feed {
+  max-height: 220px;
+  overflow-y: auto;
+  background: rgba(5, 7, 15, 0.7);
+  border-radius: 10px;
+  padding: 0.8rem;
+}
+
+.feed p { margin: 0 0 0.55rem; color: #d5dbff; }
+
+@media (max-width: 900px) {
+  .game-shell { grid-template-columns: 1fr; }
+  .log { grid-column: auto; }
+  .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .missions-grid { grid-template-columns: 1fr; }
+  .card-grid { grid-template-columns: 1fr; }
+}
