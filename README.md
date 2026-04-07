@@ -1,20 +1,85 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Chrono Heist Prototype
 
-# Run and deploy your AI Studio app
+This repository currently contains a **playable prototype** of the game (not the final 100% worldwide multiplayer release yet).
 
-This contains everything you need to run your app locally.
+If you want to **download and run the full project locally right now**, use the steps below.
 
-View your app in AI Studio: https://ai.studio/apps/c245eaf1-e380-44cb-9136-3da7284ba22a
+## Quick install (copy/paste)
 
-## Run Locally
+From a terminal:
 
-**Prerequisites:**  Node.js
+```bash
+git clone <YOUR_REPO_URL>
+cd tushar
+npm install
+npm run dev
+```
 
+Then open: `http://localhost:3000`
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+If you already downloaded ZIP, replace the first two commands with `cd` into the extracted folder, then run `npm install` and `npm run dev`.
+
+## 1) Download the project
+
+### Option A: Download ZIP from GitHub
+1. Open the repository page in your browser.
+2. Click **Code** → **Download ZIP**.
+3. Extract the ZIP to a folder on your computer.
+
+### Option B: Clone with Git
+```bash
+git clone <YOUR_REPO_URL>
+cd tushar
+```
+
+## 2) Install requirements
+
+- Install **Node.js 20+** (LTS recommended).
+- Then install dependencies:
+
+```bash
+npm install
+```
+
+## 3) Start the game in development mode
+
+```bash
+npm run dev
+```
+
+Open the URL shown in terminal (usually `http://localhost:3000`).
+
+## 4) Download a production build (offline files)
+
+Build the game:
+
+```bash
+npm run build
+```
+
+This creates a `dist/` folder. That folder is the downloadable web build.
+
+To test the production build locally:
+
+```bash
+npm run preview
+```
+
+## 5) Share/download it on other devices
+
+You can upload the `dist/` folder to any static host:
+- Netlify
+- Vercel
+- GitHub Pages
+- Firebase Hosting
+
+Then anyone worldwide can open and play from the deployed URL.
+
+---
+
+## Important clarification
+
+- Right now this repo is a **prototype** version of Chrono Heist.
+- If you want a true “full game” (accounts, matchmaking, global multiplayer servers, anti-cheat, progression, live ops), those systems still need to be implemented.
+
+A practical next step is to build an authoritative multiplayer backend, then deploy region-based servers and connect this client to them.
